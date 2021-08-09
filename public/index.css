@@ -1,0 +1,47 @@
+:root {
+  --mw: 40vw;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.t-head {
+  text-align: center;
+  font-size: large;
+  font-weight: 500;
+}
+
+td {
+  padding: 0 20px;
+  height: 2.5rem;
+  vertical-align: middle;
+}
+
+.full {
+  width: 50%;
+  text-align: center;
+  overflow: scroll;
+}
+
+.short {
+  width: 30%;
+  text-align: center;
+}
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}

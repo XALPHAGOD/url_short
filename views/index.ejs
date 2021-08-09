@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>URLShort</title>
+  </head>
+  <body>
+    <h1>URL Shortener</h1>
+    <form
+      action="/shorten"
+      method="POST"
+      style="
+        width: 50%;
+        height: 200px;
+        padding: 25px 10%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+      "
+    >
+      <input
+        type="url"
+        name="fullURL"
+        id="fullURL"
+        required
+        placeholder="Full URL"
+        style="width: 100%; padding: 3px 0px; text-align: center"
+        autocomplete="off"
+      />
+      <button
+        type="submit"
+        style="
+          padding: 0.35rem 1.25rem;
+          color: white;
+          background-color: rgb(0, 110, 255);
+          border: none;
+          border-radius: 3px;
+        "
+      >
+        Shorten
+      </button>
+    </form>
+    <div style="height: 50vh; overflow: scroll">
+      <div style="display: flex; justify-content: space-evenly">
+        <div class="t-head" style="width: 50vw">Full URL</div>
+        <div class="t-head" style="width: 30vw">Shortened</div>
+      </div>
+      <table style="width: 80vw; table-layout: fixed">
+        <% data.forEach(urls=>{ %>
+        <tr>
+          <td class="full">
+            <a target="_" href="<%= urls.full %>"><%= urls.full %>></a>
+          </td>
+          <td class="short">
+            <a target="_" href="<%= urls.short %>"><%= urls.short %></a>
+          </td>
+        </tr>
+        <% }) %>
+      </table>
+    </div>
+  </body>
+</html>
